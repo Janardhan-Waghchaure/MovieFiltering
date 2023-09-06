@@ -1,0 +1,174 @@
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    margin: auto;
+    margin-top: 2%;
+    /* background-color: red; */
+    width: 80%;
+    height: 80%;
+    padding: 40px 30px;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    grid-template-columns: repeat(auto-fill , minmax(100px , 1fr));
+    /* grid-template-rows: repeat(auto-fill , minmax(30vh , 1fr)); */
+    overflow-y: scroll;
+}
+
+.grid::-webkit-scrollbar{
+    display: none;
+}
+
+.movie{
+    /* background-color: red; */
+    height: fit-content;
+    cursor: pointer;
+    scale: 1;
+    transition: scale 0.5s ease-in-out;
+}
+
+.movie:hover{
+    scale: 1.3;
+    z-index: 1;
+}
+
+.movie:hover .movie_header{
+    opacity: 1;
+}
+
+.movie_header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9) 30% , transparent);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.movie .subscription{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1px 2px;
+    border-radius: 10px;
+    position: absolute;
+    top: 1px;
+    right : 15px;
+    font-size: 6px;
+    opacity: 0;
+    
+    transition: all 0.5s ease-in-out;
+}
+
+.movie:hover .subscription{
+    opacity: 1;
+}
+
+.subscription.Free{
+    color: white;
+    background-color: rgb(88, 88, 255);
+}
+
+.subscription.Silver{
+    background-color: rgb(190, 190, 190);
+}
+
+.subscription.Gold{
+    background-color: rgb(254, 249, 113);
+}
+
+
+.movie_header span{
+    color: white;
+    text-transform: capitalize;
+    display: inline-block;
+    font-size: 0.5rem;
+    max-width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.movie .poster{
+    width: 100%;
+    object-fit: cover;
+}
+
+.fevorite{
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    width: 0.5rem;
+    opacity: 0;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+    
+    transition: all 0.5s ease-in-out;
+}
+
+.movie:hover .fevorite{
+    opacity: 1;
+}
+
+@media screen and (max-width : 350px) {
+    .movie:hover{
+        scale: 1.2;
+        z-index: 1;
+    }
+}
+
+.ratings{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(transparent ,rgba(0, 0, 0, 0.9) 30%);
+    
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    opacity: 0;
+    
+    transition: all 0.5s ease-in-out;
+}
+
+.movie:hover .ratings{
+    opacity: 1;
+}
+
+.ratings span{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 1px;
+    color: white;
+    font-size: 7px;
+}
+
+
+.imdb_rating , .roton_tomatos , .views{
+    margin-left: 4px;
+    width: 14px;
+}
+
+.views{
+    width: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.roton_tomatos{
+    width: 10px;
+}

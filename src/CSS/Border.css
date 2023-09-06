@@ -1,0 +1,61 @@
+
+.border{
+    background-color: red;
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.border h1{
+    color: #000;
+}
+
+.border::before{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    content: "";
+    background-image: conic-gradient(#ff0e32 , #FFA500 , #FFFF00 , #00FF00 , #0000FF , #4B0082 , #EE82EE , #ff0e32);
+    
+    animation-name: rotate;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    z-index: -1;
+}
+.border::after{
+
+    
+
+    width: 99.5%;
+    height: 99%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    content: "";
+    background-color: rgb(255, 255, 255);
+    color: black;
+
+    border-radius: 4px;
+    z-index: -1;
+}
+
+
+
+
+@keyframes rotate{
+    from{
+        transform: translate(-50% , -50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50% , -50%) rotate(360deg);
+    }
+}
